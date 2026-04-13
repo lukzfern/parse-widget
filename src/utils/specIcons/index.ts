@@ -1,0 +1,1 @@
+export { getSpecIconUrl } from './specIcons';

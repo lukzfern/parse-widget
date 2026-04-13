@@ -1,0 +1,21 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Transparent background so OBS browser source shows no canvas color */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: inline-block;
+}

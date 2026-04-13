@@ -1,0 +1,169 @@
+/* ── Widget shell ──────────────────────────────────────── */
+.widget {
+  --widget-border: rgba(255, 255, 255, 0.07);
+
+  width: 400px;
+  background: rgba(7, 7, 12, 0.88);
+  border: 1px solid var(--widget-border);
+  border-radius: 10px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  color: #e0e0e8;
+  font-family: inherit;
+}
+
+/* ── Header ────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 16px 11px;
+  border-bottom: 1px solid var(--widget-border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.charName {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.zoneInfo {
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.avgBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+  gap: 1px;
+}
+
+.avgLabel {
+  font-size: 9px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.avg {
+  font-size: 26px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+/* ── Boss list ─────────────────────────────────────────── */
+.bossList {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 10px 8px;
+}
+
+.empty {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+  padding: 14px 0;
+  margin: 0;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+.footer {
+  padding: 5px 14px 7px;
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid var(--widget-border);
+  letter-spacing: 0.3px;
+}
+
+.refreshing {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── Loading state ─────────────────────────────────────── */
+.loading {
+  width: 400px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 7, 12, 0.88);
+  border-radius: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+/* ── Error state ───────────────────────────────────────── */
+.error {
+  width: 400px;
+  padding: 18px 16px;
+  background: rgba(7, 7, 12, 0.92);
+  border: 1px solid rgba(255, 70, 70, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.errorTitle {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #ff6b6b;
+}
+
+.errorMsg {
+  margin: 0;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  word-break: break-word;
+}
+
+.retry {
+  margin-top: 8px;
+  align-self: flex-start;
+  padding: 4px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: #d0d0d8;
+  font-size: 11.5px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.retry:hover {
+  background: rgba(255, 255, 255, 0.12);
+}

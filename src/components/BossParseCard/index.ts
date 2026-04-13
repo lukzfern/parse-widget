@@ -1,0 +1,1 @@
+export { BossParseCard } from './BossParseCard';
