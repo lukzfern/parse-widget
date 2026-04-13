@@ -43,6 +43,9 @@ export const config = {
     refreshInterval:  import.meta.env.VITE_REFRESH_INTERVAL
                         ? Number(import.meta.env.VITE_REFRESH_INTERVAL)
                         : 300_000,
+    /** 'compact' = slim sidebar widget (~400 px wide)
+     *  'panel'   = full 800×600 scene overlay */
+    layout: import.meta.env.VITE_LAYOUT === 'panel' ? 'panel' : 'compact',
   },
 } as const;
 

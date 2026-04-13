@@ -109,6 +109,7 @@ describe('Widget — data state', () => {
           rankings: [],
           bestPerformanceAverage: null,
           medianPerformanceAverage: null,
+          allStars: null,
         },
       }),
       zoneName: 'Empty Raid',

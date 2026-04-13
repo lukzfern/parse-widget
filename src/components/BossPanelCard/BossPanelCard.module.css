@@ -1,0 +1,78 @@
+/* ── Card shell ────────────────────────────────────────── */
+/* No fixed height — the grid row (1fr) drives the height so all cards
+   share the available vertical space regardless of how many bosses. */
+.card {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    background 0.2s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Left accent strip ─────────────────────────────────── */
+.accent {
+  width: 4px;
+  flex-shrink: 0;
+  align-self: stretch;
+  opacity: 0.85;
+}
+
+.card.tierGray .accent {
+  opacity: 0.2;
+}
+
+/* ── Single-row content ─────────────────────────────────── */
+/* vw/vh units ensure text stays readable when the OBS browser
+   source is scaled down to fit a chat-cover-sized canvas slot. */
+.name {
+  flex: 1;
+  font-size: clamp(12px, 3.5vw, 28px);
+  font-weight: 700;
+  color: #e4e4f2;
+  padding: 0 clamp(6px, 1.2vw, 12px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  letter-spacing: 0.2px;
+}
+
+.specIcon {
+  width: clamp(14px, 5vh, 36px);
+  height: clamp(14px, 5vh, 36px);
+  border-radius: 4px;
+  object-fit: cover;
+  opacity: 0.88;
+  outline: 1px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+  margin: 0 clamp(4px, 0.8vw, 10px);
+}
+
+/* Parse % — the hero element; vh-based so it fills the card height */
+.percent {
+  font-size: clamp(14px, 6vh, 44px);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+  padding-right: clamp(8px, 1.5vw, 14px);
+}
+

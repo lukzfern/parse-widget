@@ -1,0 +1,1 @@
+export { BossPanelCard } from './BossPanelCard';

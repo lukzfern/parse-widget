@@ -40,6 +40,9 @@ export const mockCharacterData = (overrides: Partial<CharacterData> = {}): Chara
     ],
     bestPerformanceAverage: 97.1,
     medianPerformanceAverage: 82.3,
+    allStars: [
+      { spec: 'Devastation', points: 1850, rank: 42, regionRank: 18, serverRank: 3, rankPercent: 98.2 },
+    ],
   },
   ...overrides,
 });

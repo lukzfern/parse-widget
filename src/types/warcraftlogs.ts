@@ -11,12 +11,22 @@ export interface BossRanking {
   lockedIn: boolean;
 }
 
+export interface ZoneAllStars {
+  spec: string;
+  points: number;
+  rank: number;
+  regionRank: number;
+  serverRank: number;
+  rankPercent: number;
+}
+
 export interface ZoneRankingsPayload {
   difficulty: number;
   zone: number;
   rankings: BossRanking[];
   bestPerformanceAverage: number | null;
   medianPerformanceAverage: number | null;
+  allStars: ZoneAllStars[] | null;
 }
 
 export interface CharacterData {
